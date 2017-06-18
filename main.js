@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     height = canvas.height = window.innerHeight,
     xMiddle = width / 2,
     yMiddle = height / 2,
-    armOne = new Arm('flex'),
-    total = 3,
+    armOne = new Arm(move),
+    total = 50,
     length = ((xMiddle)) / total,
     p = new Point(xMiddle, yMiddle);
 
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     p.publish();
   }
 
-  document.body.addEventListener('mousemove', function(event) {
-    pointReferencePosition(event.clientX, event.clientY);
+  document.body.addEventListener('mousemove', (e) => {
+    pointReferencePosition(e.clientX, e.clientY);
   });
 
   update();
